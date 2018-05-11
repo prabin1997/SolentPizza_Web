@@ -1,20 +1,100 @@
-
 <html lang="en">
 	<head>
         <meta charset="UTF-8">
 	 <link rel="icon" href="https://cdn1.iconfinder.com/data/icons/all_google_icons_symbols_by_carlosjj-du/128/pizza_box-y.png">
-	 <link rel="stylesheet" type="text/css" href="style.css">
+	 <link rel="stylesheet" type="text/css" href="css/style.css">
 	 <title>Solent Pizza</title>
 	 </head>
 	 <body>
-	    <div class = "contain">
-		<header>
-		   <h1><b>SOLENT PIZZA</b></h1>
-		<ul class="nav">
+	    <div class = "main_header">
+		<div class = "content_wrapper clearfix">
+		   <h1 class ="title">SOLENT PIZZA</h1>
+		   <ul class="nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="order.html">Order</a></li>
                 <li><a href="contact.html">Contact</a></li>
         </ul>
 		</div>
+		</div>
+		<div class ="contain">
+		<h1 id="welcome">Welcome to Solent Pizza</h1>
 		
-	 
+		<br>
+			<br>
+		<article>
+		
+			<div class="slides-container">
+			<div class="mySlides">
+			<img src="images/pepperoni.jpg" style="width:80%">
+			<div class="name">Pepperoni Pizza</div>
+			</div>
+
+			<div class="mySlides">
+			<img src="images/napoli.jpg" style="width:80%">
+			<div class="name">Napoli Pizza</div>
+			</div>
+
+			<div class="mySlides">
+			<img src="images/margherita.jpg" style="width:80%">
+			<div class="name">Margherita Pizza</div>
+			</div>
+
+			<a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			<br>
+
+			<div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span> 
+			<span class="dot" onclick="currentSlide(2)"></span> 
+			<span class="dot" onclick="currentSlide(3)"></span> 
+			</div>
+		<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>	
+		</article>
+		<footer>
+				<script type = "text/javascript"><!--
+			var calander = new Date();
+			var date = calander.getDate();
+			var day = (date<10) ? '0'+ date: date;
+			var m = calander.getMonth() +1;
+			var month =(m<10) ? '0'+m:m;
+			var y = calander.getYear();
+			var year = (y<1000) ? y+1900:y;
+			var hours = calander.getHours();
+			var minutes = calander.getMinutes();
+			var time = hours+ ":"+ minutes;
+			document.write(hours + ":" + minutes , day + "/" + month + "/" + year);
+			//--></script>
+			<p>2018 Solent Pizza Inc.</p>
+		
+			
+				
+			
+			
