@@ -1,0 +1,74 @@
+*{
+	font-family: "Arial Black", Gadget, sans-serif;
+	background-color;
+	text-decoration:none;
+}
+
+.content_wrapper{
+	width:1000px;
+	margin:0 auto;
+}
+
+body{
+	background-color:;
+}
+
+.main_header{
+	background-color: #80dfff;
+	height:80px;
+}
+
+.title{
+	display:inline;
+	float:left;
+	margin-top:20px;
+}
+
+.nav{
+	display: inline-block;
+	float: right;
+}
+
+.nav ul{
+	list-style: none;
+	padding:0;
+}
+.nav li{
+	display: inline-block;
+	margin-right: 20px;
+	color: black;
+}
+
+.contain{
+	width:1000px;
+	margin: auto;
+}
+
+article{
+	marigin-left:50px
+	border-left:1px solid gray;
+	padding:1em;
+	overflow:hidden;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+footer {
+	background-color:#80dfff;
+	text-align:center;
+	vertical-align: middle;
+	
+}
+
+
+
+
+
+
+.
+
+
