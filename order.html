@@ -1,1 +1,134 @@
-order
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+	 <link rel="icon" href="https://cdn1.iconfinder.com/data/icons/all_google_icons_symbols_by_carlosjj-du/128/pizza_box-y.png">
+	 <link rel="stylesheet" type="text/css" href="css/style.css">
+	 <title>Solent Pizza</title>
+	 </head>
+	 <body>
+	    <div class = "main_header">
+		<div class = "content_wrapper clearfix">
+		   <h1 class ="title">SOLENT PIZZA</h1>
+		   <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+        </ul>
+		</div>
+		</div>
+		<script type ="text/javascript">
+function validateFormElement(formValue) {
+    if ((typeof formValue === 'string') && formValue.length > 0) {
+        return true;
+    }
+    return false;
+    }
+
+function validateForm() {
+
+    var validationResults = [];
+
+    var i;
+
+    if (!validateFormElement(document.orderForm.address.value)) {
+        validationResults.push('Please enter your address');
+    }
+    if (!validateFormElement(document.orderForm.postcode.value)) {
+        validationResults.push('Please enter your post code');
+    }
+    if (!validateFormElement(document.orderForm.mobile.value)) {
+        validationResults.push('Please enter a mobile number');
+    }
+
+    var pizzaBases = document.getElementsByName("size");
+    var selectedBase = '';
+    for (i=0; i< pizzaBases.length; i++) {
+        if (pizzaBases[i].checked) {
+            selectedBase = pizzaBases[i].value;
+        }
+    }
+    if (selectedBase.length === 0) {
+        validationResults.push('Please chose a pizza base');
+    }
+    var pizzaToppings = document.getElementsByName("topping");
+
+    var selectedToppings = [];
+    for (i=0; i< pizzaToppings.length; i++) {
+        if (pizzaToppings[i].checked) {
+            selectedToppings.push(pizzaToppings[i].value);
+        }
+    }
+    
+ 
+    if (selectedToppings.length === 0) {
+        validationResults.push('Please chose one moretopping');
+    }
+    if (validationResults.length === 0) {
+        document.getElementById('validationResults').innerHTML = '<em>Your order has been placed</em>';
+    } else {
+        document.getElementById('validationResults').innerHTML = 'Error please checking the following details:-';
+        for (var i=0; i < validationResults.length; i += 1) {
+            var docList = document.createElement('ul')
+            document.getElementById('validationResults').appendChild(docList);
+            var feedback = document.createElement('l');
+            feedback.innerHTML = validationResults[i];
+            docList.appendChild(feedback);
+        }
+    }
+    return false;
+}
+        </script>
+		<p>Place your order here.</p>
+        <div id="form">
+        <form name="orderForm" onsubmit="return validateForm()" method="post">
+            <p>Please chose a pizza base<br />
+                <input type="radio" name="size" value="small" /> Small <span class="price">£5</span>
+                <input type="radio" name="size" value="medium" /> Medium <span class="price">£8</span>
+                <input type="radio" name="size" value="large" /> Large <span class="price">£10</span>
+            </p>
+            <p>Please chose one or more toppings* <br />
+                <input type="radio" name="topping" value="pepperoni" /> Pepperoni <span class="price">£0.20</span>
+                <input type="radio" name="topping" value="cheese" /> Cheese <span class="price">£0.40</span>
+                <input type="radio" name="topping" value="ham" /> Ham <span class="price">£0.50</span>
+                <input type="radio" name="topping" value="bacon" /> Bacon <span class="price">£0.60</span>
+            </p>
+            <p>Extras <br />
+                <input type="checkbox" name="extras" value="chips" /> Chips <span class="price">£2.50</span>
+                <input type="checkbox" name="extras" value="wings" /> Wings<span class="price">£3.00</span>
+            </p>
+            <p>Delivery details </p>
+            <p>Address<br />
+                <input type="text" name="address" placeholder="Address" />
+            </p>
+			<p>Mobile umber<br/>
+			    <input type="tel" name="mobile" placeholder="Mobile"/>
+            <p>Postcode <br />
+                <input type="text" name="postcode" placeholder="Postcode" />
+            </p>
+            <p>
+                <button type="submit" value="order">Order</button>
+                <button type="reset" value="reset">Reset</button>
+            </p>
+
+        </form>
+        </div>
+
+        <div id="validationResults"></div>
+        </div>
+    </body>
+	<footer>
+				<script type = "text/javascript"><!--
+			var calander = new Date();
+			var date = calander.getDate();
+			var day = (date<10) ? '0'+ date: date;
+			var m = calander.getMonth() +1;
+			var month =(m<10) ? '0'+m:m;
+			var y = calander.getYear();
+			var year = (y<1000) ? y+1900:y;
+			var hours = calander.getHours();
+			var minutes = calander.getMinutes();
+			var time = hours+ ":"+ minutes;
+			document.write(hours + ":" + minutes , day + "/" + month + "/" + year);
+			//--></script>
+			<p>2018 Solent Pizza Inc.</p>
+		
